@@ -1,13 +1,17 @@
-
+#pragma once
 #include "SmallCube.h"
+#include "BigCube.h"
 #include <time.h>
 #include <stdlib.h>
 #include <iostream>
+#define CUBE_SIZE 13
 using namespace std;
 
+//                    (верх,      низ,   впереди,   сзади,    лево,      право)
+unsigned int c[9] = { 0xFFFFFF, 0xFFFF00, 0x0000FF, 0x00FF00, 0xFF0000, 	0xCD853F };
 int xRot = 30, yRot = 30, zRot = 0;
 double translateZ = -30.0;
-SmallCube cube;
+BigCube cube;
 
 void display()
 {
@@ -75,6 +79,7 @@ int main(int argc, char **argv)
 	glutInitWindowSize(800, 700);
 	glutInitWindowPosition(200, 0);
 	glutCreateWindow("Rubics Cube");
+	cube.clear(CUBE_SIZE, c);
 	glEnable(GL_DEPTH_TEST);
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);

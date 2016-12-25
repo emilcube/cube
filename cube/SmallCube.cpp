@@ -1,18 +1,21 @@
+#pragma once
 #include "SmallCube.h"
-
 #include <stdio.h>
 #include <string.h>
 
 
 SmallCube::SmallCube()
 {
-	size = 5.0;
-	color[0] = 0xFFFFFF;//вверх-белый
-	color[1] = 0xFFFF00;//низ-желтый
-	color[2] = 0x0000FF;//спереди-синий
-	color[3] = 0x00FF00;//сзади-зеленый
-	color[4] = 0xFF0000;//лево-красный
-	color[5] = 0xFF9900;//право-оранжевый
+	//size = 5.0;
+	//color[0] = 0xFFFFFF;//вверх-белый
+	//color[1] = 0xFFFF00;//низ-желтый
+	//color[2] = 0x0000FF;//спереди-синий
+	//color[3] = 0x00FF00;//сзади-зеленый
+	//color[4] = 0xFF0000;//лево-красный
+	//color[5] = 0xFF9900;//право-оранжевый
+
+	memset(color, 0, sizeof(color));
+	size = 0.0;
 }
 
 
@@ -86,9 +89,13 @@ void SmallCube::draw()
 	glPopMatrix();
 }
 
-
-
-
+void SmallCube::draw(double x, double y, double z)
+{
+	glPushMatrix();
+	glTranslated(x, y, z);
+	draw();
+	glPopMatrix();
+}
 
 
 

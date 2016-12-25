@@ -21,9 +21,15 @@
     <ClCompile Include="SmallCube.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="BigCube.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SmallCube.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="BigCube.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>
