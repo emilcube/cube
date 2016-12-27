@@ -24,6 +24,11 @@ void SmallCube::setColor(int i, int color)
 	this->color[i] = color;
 }
 
+int SmallCube::getColor(int i)
+{
+	return color[i];
+}
+
 unsigned char *SmallCube::dividecolor(int i)
 {
 	buffercolor[0] = color[i] >> 16;

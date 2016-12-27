@@ -12,5 +12,11 @@ public:
 	BigCube();
 	BigCube(double size, unsigned int *color);
 	void clear(double size, unsigned int *color);
+	void rightc();
+	void leftcc();
+	void upc();
+	void downcc();
+	void frontc();
+	void backcc();
 };
 

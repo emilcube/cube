@@ -13,9 +13,11 @@ public:
 	double size;
 	SmallCube();
 	void setColor(int i, int color);
+	int getColor(int i);
 	unsigned char *dividecolor(int i);
 	void draw();
 	void draw(double x, double y, double z);
+
 };
 
 

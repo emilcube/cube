@@ -10,7 +10,7 @@ using namespace std;
 //                    (верх,      низ,   впереди,   сзади,    лево,      право)
 unsigned int c[9] = { 0xFFFFFF, 0xFFFF00, 0x0000FF, 0x00FF00, 0xFF0000, 	0xCD853F };
 int xRot = 30, yRot = 30, zRot = 0;
-double translateZ = -30.0;
+double translateZ = -45.0;
 BigCube cube;
 
 void display()
@@ -68,6 +68,13 @@ void specialKeys(int key, int, int)
 			xRot += 360;
 		glutPostRedisplay();
 	}
+
+	if (key == GLUT_KEY_F1) {cube.rightc();}
+	if (key == GLUT_KEY_F2) {cube.leftcc();}
+	if (key == GLUT_KEY_F3) {cube.upc();}
+	if (key == GLUT_KEY_F4) {cube.downcc();}
+	if (key == GLUT_KEY_F5) {cube.frontc(); }
+	if (key == GLUT_KEY_F6) {cube.backcc(); }
 }
 
 int main(int argc, char **argv)
