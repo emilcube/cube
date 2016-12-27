@@ -9,8 +9,8 @@ using namespace std;
 
 //                    (верх,      низ,   впереди,   сзади,    лево,      право)
 unsigned int c[9] = { 0xFFFFFF, 0xFFFF00, 0x0000FF, 0x00FF00, 0xFF0000, 	0xCD853F };
-int xRot = 30, yRot = 30, zRot = 0;
-double translateZ = -45.0;
+int xRot = 30, yRot = 40, zRot = 0;
+double translateZ = -35.0;
 BigCube cube;
 
 void display()
@@ -20,6 +20,7 @@ void display()
 	glTranslatef(0, 0, translateZ);
 	glRotatef(xRot, 1, 0, 0);
 	glRotatef(yRot, 0, 1, 0);
+	glTranslatef(CUBE_SIZE / -2.0, CUBE_SIZE / -2.0, CUBE_SIZE / -2.0);
 	cube.draw();
 	glPopMatrix();
 	glutSwapBuffers();
@@ -69,12 +70,12 @@ void specialKeys(int key, int, int)
 		glutPostRedisplay();
 	}
 
-	if (key == GLUT_KEY_F1) {cube.rightc();}
-	if (key == GLUT_KEY_F2) {cube.leftcc();}
-	if (key == GLUT_KEY_F3) {cube.upc();}
-	if (key == GLUT_KEY_F4) {cube.downcc();}
-	if (key == GLUT_KEY_F5) {cube.frontc(); }
-	if (key == GLUT_KEY_F6) {cube.backcc(); }
+	if (key == GLUT_KEY_F1) {cube.rightc(); display();}
+	if (key == GLUT_KEY_F2) {cube.leftcc(); display();}
+	if (key == GLUT_KEY_F3) {cube.upc(); display();}
+	if (key == GLUT_KEY_F4) {cube.downcc(); display();}
+	if (key == GLUT_KEY_F5) { cube.frontc(); display();}
+	if (key == GLUT_KEY_F6) {cube.backcc(); display();}
 }
 
 int main(int argc, char **argv)

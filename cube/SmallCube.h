@@ -9,8 +9,10 @@ class SmallCube
 private:
 	unsigned int color[6]; // (верх, низ, спереди, сзади, лево, право)
 	unsigned char buffercolor[3];
-public:
 	double size;
+public:
+	double getSize();
+	void setSize(double i);
 	SmallCube();
 	void setColor(int i, int color);
 	int getColor(int i);

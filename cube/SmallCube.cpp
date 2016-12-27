@@ -103,7 +103,8 @@ void SmallCube::draw(double x, double y, double z)
 }
 
 
-
+double SmallCube::getSize() { return size; }
+void SmallCube::setSize(double i) { size = i; }
 
 
 
